@@ -37,6 +37,7 @@ SIM.steeringFile = None
 ## FourVector of translation for the Smearing of the Vertex position: x y z t
 SIM.vertexOffset = [0.0, 0.0, 0.0, 0.0]
 ## FourVector of the Sigma for the Smearing of the Vertex position: x y z t
+#TODO: Ask why vertexSigma is changed from a list of zeroes (and if it correctly is picking up "mm")
 SIM.vertexSigma = [0.001 * mm, 0.001 * mm, 0.001 * mm, 0.001 * mm]
 
 
@@ -126,6 +127,8 @@ SIM.filter.tracker = "edep1kev"
 ################################################################################
 
 ##  direction of the particle gun, 3 vector 
+#TODO: Follow up with Ethan, this didn't change anything, right? Both direction, distribution, and energy. I recall a discussion on what "gun energy" is... Never came to an understanding.
+#My guess is that there are some default options that could be applied in the absence of these settings.
 # SIM.gun.direction = (0, 0, 1)
 
 ## choose the distribution of the random direction for theta
@@ -190,9 +193,11 @@ SIM.part.keepAllParticles = False
 
 ## Minimal distance between particle vertex and endpoint of parent after
 ## which the vertexIsNotEndpointOfParent flag is set
+##TODO: Why was this changed?
 SIM.part.minDistToParentVertex = 2.2e-20
 
 ## MinimalKineticEnergy to store particles created in the tracking region
+## TODO: Ask about this as well, likely does nothing, but could increase processing time.
 SIM.part.minimalKineticEnergy = 0.01*MeV
 
 ##  Printout at End of Tracking 
