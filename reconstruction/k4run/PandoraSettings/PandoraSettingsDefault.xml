@@ -96,19 +96,49 @@
                 <algorithm type = "ShowerMipMerging4"/>
                 <algorithm type = "ProximityBasedMerging">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "ConeBasedMerging">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "MipPhotonSeparation">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "HighEnergyPhotonRecovery">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                     <AdditionalClusterListNames>PhotonClusters</AdditionalClusterListNames>
                 </algorithm>
                 <algorithm type = "SoftClusterMerging">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                     <AdditionalClusterListNames>PhotonClusters</AdditionalClusterListNames>
                 </algorithm>
                 <algorithm type = "IsolatedHitMerging">
@@ -263,20 +293,50 @@
                 <algorithm type = "ShowerMipMerging4"/>
                 <algorithm type = "ProximityBasedMerging">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "ConeBasedMerging">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "MipPhotonSeparation">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "SoftClusterMerging">
                     <algorithm type = "TrackClusterAssociation"/>
+                        <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                        <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                        <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                        <MaxSearchLayer>0</MaxSearchLayer>
+                        <ParallelDistanceCut>0</ParallelDistanceCut>
+                        <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
                 </algorithm>
                 <algorithm type = "IsolatedHitMerging"/>
             </associationAlgorithms>
         </algorithm>
         <algorithm type = "TrackClusterAssociation" description = "TrackClusterAssociation"></algorithm>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
         <UsingOrderedAlgorithms>true</UsingOrderedAlgorithms>
         <ShouldUseForcedClustering>true</ShouldUseForcedClustering>
         <algorithm type = "ForcedClustering" description = "ForcedClustering"/>
@@ -299,6 +359,12 @@
         </clusteringAlgorithms>
         <algorithm type = "TopologicalAssociationParent" description = "ClusterAssociation" instance = "reclusterAssociation"></algorithm>
         <algorithm type = "TrackClusterAssociation" description = "TrackClusterAssociation"></algorithm>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
         <UsingOrderedAlgorithms>true</UsingOrderedAlgorithms>
         <ShouldUseForcedClustering>true</ShouldUseForcedClustering>
         <algorithm type = "ForcedClustering" description = "ForcedClustering"/>
@@ -306,6 +372,12 @@
 
     <algorithm type = "TrackDrivenMerging">
         <algorithm type = "TrackClusterAssociation" description = "TrackClusterAssociation"></algorithm>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
     </algorithm>
 
     <algorithm type = "ResolveTrackAssociations">
@@ -325,6 +397,12 @@
         </clusteringAlgorithms>
         <algorithm type = "TopologicalAssociationParent" description = "ClusterAssociation" instance = "reclusterAssociation"></algorithm>
         <algorithm type = "TrackClusterAssociation" description = "TrackClusterAssociation"></algorithm>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
         <UsingOrderedAlgorithms>true</UsingOrderedAlgorithms>
         <ShouldUseForcedClustering>true</ShouldUseForcedClustering>
         <algorithm type = "ForcedClustering" description = "ForcedClustering"/>
@@ -350,6 +428,12 @@
         </clusteringAlgorithms>
         <algorithm type = "TopologicalAssociationParent" description = "ClusterAssociation" instance = "reclusterAssociation"></algorithm>
         <algorithm type = "TrackClusterAssociation" description = "TrackClusterAssociation"></algorithm>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
         <UsingOrderedAlgorithms>true</UsingOrderedAlgorithms>
     </algorithm>
 
@@ -373,6 +457,12 @@
         </clusteringAlgorithms>
         <algorithm type = "TopologicalAssociationParent" description = "ClusterAssociation" instance = "reclusterAssociation"></algorithm>
         <algorithm type = "TrackClusterAssociation" description = "TrackClusterAssociation"></algorithm>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
         <UsingOrderedAlgorithms>true</UsingOrderedAlgorithms>
         <ShouldUseForcedClustering>true</ShouldUseForcedClustering>
         <algorithm type = "ForcedClustering" description = "ForcedClustering"/>
@@ -407,10 +497,24 @@
     <!-- Photon recovery -->
     <algorithm type = "PhotonRecovery">
         <algorithm type = "TrackClusterAssociation"/>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
+
     </algorithm>
 
     <algorithm type = "MuonPhotonSeparation">
         <algorithm type = "TrackClusterAssociation"/>
+            <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+            <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+            <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+            <MaxSearchLayer>0</MaxSearchLayer>
+            <ParallelDistanceCut>0</ParallelDistanceCut>
+            <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
+
     </algorithm>
 
     <!-- Prepare particle flow objects -->
@@ -420,10 +524,62 @@
         <PfoTrackListName>PfoCreation</PfoTrackListName>
         <trackClusterAssociationAlgorithms>
             <algorithm type = "TrackClusterAssociation"/>
+                <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                <LowEnergyCut>1000000000000000000000000.0</LowEnergyCut>
+                <MaxTrackClusterDistance>0.</MaxTrackClusterDistance>
+                <MaxSearchLayer>0</MaxSearchLayer>
+                <ParallelDistanceCut>0</ParallelDistanceCut>
+                <MinTrackClusterCosAngle>1000</MinTrackClusterCosAngle>
             <algorithm type = "LoopingTrackAssociation"/>
+                <!-- changing input values for track cluster association. This seems to not be in the correct spot.  -->
+                <MaxTrackClusterDeltaZ>1000000.0</MaxTrackClusterDeltaZ>
+                <MinHitsInCluster>0</MinHitsInCluster>
+                <MinOccupiedLayersInCluster>0</MinOccupiedLayersInCluster>
+                <MaxClusterInnerLayer>1000</MaxClusterInnerLayer>
+                <MaxAbsoluteTrackClusterChi>1000.0</MaxAbsoluteTrackClusterChi>
+                <MaxDeltaR>1000000</MaxDeltaR>
+                <MinDeltaR>-100.0</MinDeltaR>
+                <NClusterFitLayers>1000000</NClusterFitLayers>
+                <NClusterDeltaRLayers>1000000</NClusterDeltaRLayers>
+                <DirectionCosineCut>1000000.</DirectionCosineCut>
+                <ClusterMipFractionCut>1000000.</ClusterMipFractionCut>
+                <DirectionCosineCut1>1000000.</DirectionCosineCut1>
+                <DirectionCosineCut2>1000000.</DirectionCosineCut2>
+                <DeltaRCut2>1000000.</DeltaRCut2>
+                <DeltaRCut3>1000000.</DeltaRCut3>
+                <DeltaRCut4>1000000.</DeltaRCut4>
+                <DirectionCosineCut3>1000000.</DirectionCosineCut3>
+                <DirectionCosineCut4>1000000.</DirectionCosineCut4>
             <algorithm type = "TrackRecovery"/>
+                <MaxTrackZStart>1000000.</MaxTrackZStart>
+                <MaxAbsoluteTrackClusterChi>1000000.</MaxAbsoluteTrackClusterChi>
+                <EndCapMaxTrackClusterDistance1>1000000.</EndCapMaxTrackClusterDistance1>
+                <EndCapMaxTrackClusterDistance2>1000000.</EndCapMaxTrackClusterDistance2>
+                <BarrelMaxTrackClusterDistance>1000000.</BarrelMaxTrackClusterDistance>
+                <MaxSearchLayer>1000000</MaxSearchLayer>
+                <ParallelDistanceCut>1000000.</ParallelDistanceCut>            
+                <MinTrackClusterCosAngle>0.</MinTrackClusterCosAngle>            
             <algorithm type = "TrackRecoveryHelix"/>
+                <MaxTrackClusterDeltaZ>1000000.</MaxTrackClusterDeltaZ>
+                <MaxAbsoluteTrackClusterChi>1000000.</MaxAbsoluteTrackClusterChi>
+                <MaxLayersCrossed>1000000</MaxLayersCrossed>
+                <MaxSearchLayer>1000000</MaxSearchLayer>
+                <ParallelDistanceCut>1000000.</ParallelDistanceCut>
+                <MinTrackClusterCosAngle>0</MinTrackClusterCosAngle>
+                <HelixComparisonNLayers>10000000.</HelixComparisonNLayers>            
+                <HelixComparisonMaxOccupiedLayers>1000000</HelixComparisonMaxOccupiedLayers>            
+                <MaxTrackClusterDistance>1000000.</MaxTrackClusterDistance>            
+                <MaxClosestHelixClusterDistance>1000000.</MaxClosestHelixClusterDistance>            
+                <MaxMeanHelixClusterDistance>1000000.</MaxMeanHelixClusterDistance>            
             <algorithm type = "TrackRecoveryInteractions"/>
+                <MaxTrackClusterDistance>1000000.</MaxTrackClusterDistance>
+                <TrackClusterDistanceCut>1000000.</TrackClusterDistanceCut>
+                <ClusterEnergyCut>1000000.</ClusterEnergyCut>
+                <DirectionCosineCut>1000000.</DirectionCosineCut>
+                <MaxTrackAssociationChi>1000000.</MaxTrackAssociationChi>
+                <MaxSearchLayer>1000000</MaxSearchLayer>
+                <ParallelDistanceCut>10000000.</ParallelDistanceCut>            
+                <MinTrackClusterCosAngle>0.</MinTrackClusterCosAngle>            
         </trackClusterAssociationAlgorithms>
     </algorithm>
 
