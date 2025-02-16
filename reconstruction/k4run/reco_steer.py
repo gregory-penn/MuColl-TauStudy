@@ -138,6 +138,28 @@ TrackDeduplication.Parameters = {
                                  "OutputTrackCollectionName": ["SiTracks"]
                                  }
 
+# adding this to match the marlin workflow
+TrackRefit = MarlinProcessorWrapper("TrackRefit")
+TrackRefit.OutputLevel = INFO
+TrackRefit.ProcessorType = "RefitFinal"
+TrackRefit.Parameters = {
+                                "EnergyLossOn": ["true"],
+                                "DoCutsOnRedChi2Nhits": ["true"],
+                                "ReducedChi2Cut": ["3."],
+                                "NHitsCuts": ["1,2 1 3,4 1 5,6 0 "], 
+                                "InputRelationCollectionName": ["SiTracksRelations"],
+                                "InputTrackCollectionName": ["SiTracks"],
+                                "Max_Chi2_Incr": ["1.79769e+30"],
+                                "MultipleScatteringOn": ["true"],
+                                "OutputRelationCollectionName": ["SiTracks_Refitted_Relations"],
+                                "OutputTrackCollectionName": ["SiTracks_Refitted"],
+                                "ReferencePoint": ["-1"],
+                                "SmoothOn": ["false"],
+                                "Verbosity": ["MESSAGE"],
+                                "extrapolateForward": ["true"],
+                                "MinClustersOnTrackAfterFit:": ["3"]
+                                }
+
 
 DDMarlinPandora = MarlinProcessorWrapper("DDMarlinPandora")
 DDMarlinPandora.OutputLevel = INFO
@@ -150,7 +172,8 @@ DDMarlinPandora.Parameters = {
                               "D0UnmatchedVertexTrackCut": ["5"],
                               "DigitalMuonHits": ["0"],
                               "ECalBarrelNormalVector": ["0", "0", "1"],
-                              "ECalCaloHitCollections": ["EcalBarrelCollectionRec", "EcalEndcapCollectionRec", "EcalPlugCollectionRec"],
+                              "ECalCaloHitCollections": ["EcalBarrelCollectionRec", "EcalEndcapCollectionRec", "EcalPlugCollectionRec"], #this is for k4run digi
+                              # "ECalCaloHitCollections": ["ECALBarrelHits", "ECALEndcapHits", "ECALOtherHits"], #this is for marlin digi
                               "ECalMipThreshold": ["0.5"],
                               "ECalScMipThreshold": ["0"],
                               "ECalScToEMGeVCalibration": ["1"],
@@ -170,7 +193,8 @@ DDMarlinPandora.Parameters = {
                               "EMStochasticTerm": ["0.17"],
                               "FinalEnergyDensityBin": ["110."],
                               "HCalBarrelNormalVector": ["0", "0", "1"],
-                              "HCalCaloHitCollections": ["HcalBarrelCollectionRec", "HcalEndcapCollectionRec", "HcalRingCollectionRec"],
+                              "HCalCaloHitCollections": ["HcalBarrelCollectionRec", "HcalEndcapCollectionRec", "HcalRingCollectionRec"], #this is for k4run digi
+                              # "HCalCaloHitCollections": ["HCALBarrelHits", "HCALEndcapHits", "HCALOtherHits"], #this is for marlin digi
                               "HCalMipThreshold": ["0.3"],
                               "HCalToEMGeVCalibration": ["1.02373335516"],
                               "HCalToHadGeVCalibration": ["1.01799349172"],
@@ -214,7 +238,8 @@ DDMarlinPandora.Parameters = {
                               "ReachesECalNBarrelTrackerHits": ["0"],
                               "ReachesECalNFtdHits": ["0"],
                               "RelCaloHitCollections": ["CaloHitsRelations", "MuonHitsRelations"],
-                              "RelTrackCollections": ["SiTracks_Relations"],
+                              "RelTrackCollections": ["SiTracks_Refitted_Relations"],# for track refitting
+                              # "RelTrackCollections": ["SiTracks_Relations"],
                               "ShouldFormTrackRelationships": ["1"],
                               "SoftwareCompensationEnergyDensityBins": ["0", "2.", "5.", "7.5", "9.5", "13.", "16.", "20.", "23.5", "28.", "33.", "40.", "50.", "75.", "100."],
                               "SoftwareCompensationWeights": ["1.61741", "-0.00444385", "2.29683e-05", "-0.0731236", "-0.00157099", "-7.09546e-07", "0.868443", "1.0561", "-0.0238574"],
@@ -222,7 +247,8 @@ DDMarlinPandora.Parameters = {
                               "StartVertexAlgorithmName": ["PandoraPFANew"],
                               "StartVertexCollectionName": ["PandoraStartVertices"],
                               "StripSplittingOn": ["0"],
-                              "TrackCollections": ["SiTracks"],
+                              "TrackCollections": ["SiTracks_Refitted"], #for track refitting
+                              # "TrackCollections": ["SiTracks"],
                               "TrackCreatorName": ["DDTrackCreatorCLIC"],
                               "TrackStateTolerance": ["0"],
                               "TrackSystemName": ["DDKalTest"],
@@ -307,6 +333,7 @@ algList.append(Config)
 algList.append(DD4hep)
 algList.append(CKFTracking)
 algList.append(TrackDeduplication)
+algList.append(TrackRefit)
 algList.append(DDMarlinPandora)
 algList.append(PFOSelection)
 algList.append(FastJetProcessor)
