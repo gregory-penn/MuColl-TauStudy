@@ -129,8 +129,8 @@ CKFTracking.Parameters = {
     "TGeoFile": [the_args.TGeoFile],
     "TrackCollectionName": ["AllTracks"],
     "TrackerHitCollectionNames": ["VXDBarrelHits", "ITBarrelHits", "OTBarrelHits", "VXDEndcapHits", "ITEndcapHits", "OTEndcapHits"], # Fede has different names - may want to consider adding digi and reco together to more clearly harmonize naming choices
-    "CaloFace_Radius": ["1857"], #should be 1857, which is defeault anyways.
-    "CaloFace_Z": ["2307"] #default 
+    "CaloFace_Radius": ["1.857"], #should be 1857, which is default anyways.
+    "CaloFace_Z": ["2.307"] #default 
     # 
     # below is Fede's config for tracking 
     # "CKF_Chi2CutOff": ["10"],
@@ -288,8 +288,8 @@ DDMarlinPandora.Parameters = {
                               "ReachesECalNBarrelTrackerHits": ["0"],
                               "ReachesECalNFtdHits": ["0"],
                               # "RelCaloHitCollections": ["CaloHitsRelations", "MuonHitsRelations"],
-                              "RelTrackCollections": ["SiTracks_Refitted_Relations"],# for track refitting
-                              #"RelTrackCollections": ["SiTracks_Relations"],
+                              #"RelTrackCollections": ["SiTracks_Refitted_Relations"],# for track refitting
+                              "RelTrackCollections": ["SiTracks_Relations"],
                               "ShouldFormTrackRelationships": ["1"],
                               "SoftwareCompensationEnergyDensityBins": ["0", "2.", "5.", "7.5", "9.5", "13.", "16.", "20.", "23.5", "28.", "33.", "40.", "50.", "75.", "100."],
                               "SoftwareCompensationWeights": ["1.61741", "-0.00444385", "2.29683e-05", "-0.0731236", "-0.00157099", "-7.09546e-07", "0.868443", "1.0561", "-0.0238574"],
@@ -297,8 +297,8 @@ DDMarlinPandora.Parameters = {
                               "StartVertexAlgorithmName": ["PandoraPFANew"],
                               "StartVertexCollectionName": ["PandoraStartVertices"],
                               "StripSplittingOn": ["0"],
-                              "TrackCollections": ["SiTracks_Refitted"], #for track refitting
-                              #"TrackCollections": ["SiTracks"],
+                              #"TrackCollections": ["SiTracks_Refitted"], #for track refitting
+                              "TrackCollections": ["SiTracks"],
                               "TrackCreatorName": ["DDTrackCreatorCLIC"],
                               "TrackStateTolerance": ["0"],
                               "TrackSystemName": ["DDKalTest"],
