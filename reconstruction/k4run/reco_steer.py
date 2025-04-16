@@ -214,7 +214,7 @@ DDMarlinPandora = MarlinProcessorWrapper("DDMarlinPandora")
 DDMarlinPandora.OutputLevel = INFO
 DDMarlinPandora.ProcessorType = "DDPandoraPFANewProcessor"
 DDMarlinPandora.Parameters = {
-                              "Verbosity": ["DEBUG0-4"],
+                              "Verbosity": ["MESSAGE"],
                               "ClusterCollectionName": ["PandoraClusters"],
                               "CreateGaps": ["false"],
                               "CurvatureToMomentumFactor": ["0.00015"], #is this correct? Looks like it is off by a factor of 2... it was 0.00015, I think 0.0003 is correct.
@@ -281,12 +281,12 @@ DDMarlinPandora.Parameters = {
                               "PFOCollectionName": ["PandoraPFOs"],
                               "PandoraSettingsXmlFile": ["PandoraSettings/PandoraSettingsDefault.xml"],
                               "ProngVertexCollections": ["ProngVertices"],
-                              "ReachesECalBarrelTrackerOuterDistance": ["-100"],
-                              "ReachesECalBarrelTrackerZMaxDistance": ["-50"],
-                              "ReachesECalFtdZMaxDistance": ["1"],
-                              "ReachesECalMinFtdLayer": ["0"],
-                              "ReachesECalNBarrelTrackerHits": ["0"],
-                              "ReachesECalNFtdHits": ["0"],
+                              "ReachesECalBarrelTrackerOuterDistance": ["-100"], # used to determine whether track reaches ECal. L
+                              "ReachesECalBarrelTrackerZMaxDistance": ["-50"], # used to determine whether track reaches ECal
+                              "ReachesECalFtdZMaxDistance": ["1"],  # used to determine whether track reaches ECal. Some sort of "wiggle" room when finding which endcap layer a hit is in. 
+                              "ReachesECalMinFtdLayer": ["0"], # used to determine whether track reaches ECal. This is a lower bound - I think setting this to 0 effectively gives all tracks "reachesCalorimeter = True" propery.
+                              "ReachesECalNBarrelTrackerHits": ["0"], # used to determine whether track reaches ECal. This is a lower threshold on the number of hits to be considered.
+                              "ReachesECalNFtdHits": ["0"], # used to determine whether track reaches ECal. This is a lower threshold on the number of hits to be considered.
                               # "RelCaloHitCollections": ["CaloHitsRelations", "MuonHitsRelations"],
                               #"RelTrackCollections": ["SiTracks_Refitted_Relations"],# for track refitting
                               "RelTrackCollections": ["SiTracks_Relations"],
@@ -371,7 +371,7 @@ RecoMCTruthLinker.ProcessorType = "RecoMCTruthLinker"
 RecoMCTruthLinker.Parameters = {
                             "MyRecoMCTruthLinker": ["1"],
                             "CalohitMCTruthLinkName": ["CalohitMCTruthLink"],
-                            "ClusterCollection": ["MergedClusters"],
+                            "ClusterCollection": ["PandoraClusters"],
                             "ClusterMCTruthLinkName": ["ClusterMCTruthLink"],
                             "FullRecoRelation": ["false"],
                             "InvertedNonDestructiveInteractionLogic": ["false"],
@@ -387,11 +387,11 @@ RecoMCTruthLinker.Parameters = {
                             "SimCaloHitCollections": ["ECalBarrelCollection", "ECalEndcapCollection", "ECalPlugCollection", "HCalBarrelCollection", "HCalEndcapCollection", "HCalRingCollection", "YokeBarrelCollection", "YokeEndcapCollection"],
                             "SimCalorimeterHitRelationNames": ["RelationCaloHit", "RelationMuonHit"],
                             "SimTrackerHitCollections": ["VertexBarrelCollection", "VertexEndcapCollection", "InnerTrackerBarrelCollection", "OuterTrackerBarrelCollection", "InnerTrackerEndcapCollection", "OuterTrackerEndcapCollection"],
-                            "TrackCollection": ["SiTracks_Refitted"],
+                            "TrackCollection": ["SiTracks"],
                             "TrackMCTruthLinkName": ["SiTracksMCTruthLink"],
                             "TrackerHitsRelInputCollections": ["VXDTrackerHitRelations", "VXDEndcapTrackerHitRelations", "InnerTrackerBarrelHitsRelations", "OuterTrackerBarrelHitsRelations", "InnerTrackerEndcapHitsRelations", "OuterTrackerEndcapHitsRelations"],
                             "UseTrackerHitRelations": ["true"],
-                            "UsingParticleGun": ["false"],
+                            "UsingParticleGun": ["true"],
                             "Verbosity": ["MESSAGE"], #("DEBUG0-4,MESSAGE0-4,WARNING0-4,ERROR0-4,SILENT")
                             "daughtersECutMeV": ["10"]
                             }
@@ -419,14 +419,14 @@ algList.append(MyTrackTruthSiTracks)
 algList.append(DDMarlinPandora)
 algList.append(PFOSelection)
 #algList.append(RecoMCTruthLinker)
-algList.append(FastJetProcessor)
+#algList.append(FastJetProcessor)
 algList.append(LCIOWriter_all)
 #algList.append(LCIOWriter_light)
 
 from Configurables import ApplicationMgr
 ApplicationMgr( TopAlg = algList,
                 EvtSel = 'NONE',
-                EvtMax   = -1, #-1
+                EvtMax   = 2000, #-1 is all
                 ExtSvc = [evtsvc],
                 OutputLevel=INFO
               )
